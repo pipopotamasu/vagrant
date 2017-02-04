@@ -1,1 +1,2 @@
 # vagrant
+provisioningの構成はVagrantfileにコメント付きで書いてある
