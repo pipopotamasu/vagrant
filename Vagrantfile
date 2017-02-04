@@ -91,7 +91,6 @@ Vagrant.configure(2) do |config|
   # NVM
   git clone git://github.com/creationix/nvm.git ~/.nvm
   source ~/.nvm/nvm.sh
-  SHELL
 
   # Ruby 2.4.0
   sudo yum -y install gcc zlib-devel openssl-devel sqlite sqlite-devel mysql-devel readline-devel libffi-devel
@@ -102,5 +101,6 @@ Vagrant.configure(2) do |config|
   sudo ./configure
   sudo make
   sudo make install
-  ln -s /usr/local/bin/ruby /usr/bin/ruby
+  sudo ln -s /usr/local/bin/ruby /usr/bin/ruby
+  SHELL
 end
