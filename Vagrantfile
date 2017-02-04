@@ -102,5 +102,17 @@ Vagrant.configure(2) do |config|
   sudo make
   sudo make install
   sudo ln -s /usr/local/bin/ruby /usr/bin/ruby
+
+  # rbenv Rubyのバージョン切り替えができるツール
+  cd
+  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+  ## zshの場合は.bash_profileではない場所にする
+  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+  echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+  exec $SHELL -l
+
+  # ruby-build rbenvを便利に使うツールっぽい https://tsuchikazu.net/linux_ruby_on_rails_install/
+  git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+
   SHELL
 end
