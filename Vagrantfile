@@ -114,5 +114,11 @@ Vagrant.configure(2) do |config|
   # ruby-build rbenvを便利に使うツールっぽい https://tsuchikazu.net/linux_ruby_on_rails_install/
   git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
+  # /usr/local以下のあ全ファイルに777の権限を与える(あんま良くないけどめんどいからこれでよしとしておく)
+  sudo chmod 777 -R /usr/local/
+
+  # rail 5.0.1をinstall
+  gem install rails -v 5.0.1
+
   SHELL
 end
