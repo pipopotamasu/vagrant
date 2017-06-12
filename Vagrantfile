@@ -94,12 +94,12 @@ Vagrant.configure(2) do |config|
   git clone git://github.com/creationix/nvm.git ~/.nvm
   source ~/.nvm/nvm.sh
 
-  # Ruby 2.4.0
+  # Ruby 2.4.1
   sudo yum -y install gcc zlib-devel openssl-devel sqlite sqlite-devel mysql-devel readline-devel libffi-devel
   cd /usr/local/src
-  sudo wget http://cache.ruby-lang.org/pub/ruby/2.4/ruby-2.4.0.tar.gz
-  sudo tar zxvf ruby-2.4.0.tar.gz
-  cd ruby-2.4.0
+  sudo wget http://cache.ruby-lang.org/pub/ruby/2.4/ruby-2.4.1.tar.gz
+  sudo tar zxvf ruby-2.4.1.tar.gz
+  cd ruby-2.4.1
   sudo ./configure
   sudo make
   sudo make install
