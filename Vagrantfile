@@ -119,7 +119,7 @@ Vagrant.configure(2) do |config|
   # /usr/local以下のあ全ファイルに777の権限を与える(あんま良くないけどめんどいからこれでよしとしておく)
   sudo chmod 777 -R /usr/local/
 
-  # rail 5.0.1をinstall
+  # rail 5.1.1をinstall
   gem install rails -v 5.1.1
 
   SHELL
