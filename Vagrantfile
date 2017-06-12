@@ -120,7 +120,7 @@ Vagrant.configure(2) do |config|
   sudo chmod 777 -R /usr/local/
 
   # rail 5.0.1をinstall
-  gem install rails -v 5.0.1
+  gem install rails -v 5.1.1
 
   SHELL
 end
