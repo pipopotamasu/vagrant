@@ -1,6 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
-
+# hoge
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
@@ -27,6 +27,8 @@ Vagrant.configure(2) do |config|
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   config.vm.network "private_network", ip: "192.168.33.10"
+  # rail s用
+  config.vm.network :"forwarded_port", guest: 3000, host: 3000
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -38,7 +40,7 @@ Vagrant.configure(2) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
-
+  config.vm.synced_folder ".", "/vagrant", type: "nfs"
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
@@ -92,12 +94,12 @@ Vagrant.configure(2) do |config|
   git clone git://github.com/creationix/nvm.git ~/.nvm
   source ~/.nvm/nvm.sh
 
-  # Ruby 2.4.0
+  # Ruby 2.4.1
   sudo yum -y install gcc zlib-devel openssl-devel sqlite sqlite-devel mysql-devel readline-devel libffi-devel
   cd /usr/local/src
-  sudo wget http://cache.ruby-lang.org/pub/ruby/2.4/ruby-2.4.0.tar.gz
-  sudo tar zxvf ruby-2.4.0.tar.gz
-  cd ruby-2.4.0
+  sudo wget http://cache.ruby-lang.org/pub/ruby/2.4/ruby-2.4.1.tar.gz
+  sudo tar zxvf ruby-2.4.1.tar.gz
+  cd ruby-2.4.1
   sudo ./configure
   sudo make
   sudo make install
@@ -117,8 +119,8 @@ Vagrant.configure(2) do |config|
   # /usr/local以下のあ全ファイルに777の権限を与える(あんま良くないけどめんどいからこれでよしとしておく)
   sudo chmod 777 -R /usr/local/
 
-  # rail 5.0.2をinstall
-  gem install rails -v 5.0.2
+  # rail 5.1.1をinstall
+  gem install rails -v 5.1.1
 
   SHELL
 end
